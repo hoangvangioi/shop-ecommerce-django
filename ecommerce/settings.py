@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     
-    'django.contrib.humanize',
+    # 'django.contrib.humanize',
     ]
 
 MIDDLEWARE = [

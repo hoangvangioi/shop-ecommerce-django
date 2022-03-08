@@ -1,0 +1,52 @@
+{% load blog_tags %}
+<aside class="col-lg-4">
+    <!-- Sidebar-->
+    <div class="offcanvas offcanvas-collapse offcanvas-end border-start ms-lg-auto" id="blog-sidebar" style="max-width: 22rem;">
+        <div class="offcanvas-header align-items-center shadow-sm">
+            <h2 class="h5 mb-0">Sidebar</h2>
+            <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body py-grid-gutter py-lg-1 px-lg-4" data-simplebar data-simplebar-auto-hide="true">
+            <!-- Categories-->
+            <div class="widget widget-links mb-grid-gutter pb-grid-gutter border-bottom mx-lg-2">
+                <h3 class="widget-title">Blog categories</h3>
+                <ul class="widget-list">
+                    <li class="widget-list-item"><a class="widget-list-link d-flex justify-content-between align-items-center" href="#"><span>Online shopping</span><span class="fs-xs text-muted ms-3">18</span></a></li>
+                    <li class="widget-list-item"><a class="widget-list-link d-flex justify-content-between align-items-center" href="#"><span>Fashion</span><span class="fs-xs text-muted ms-3">25</span></a></li>
+                    <li class="widget-list-item"><a class="widget-list-link d-flex justify-content-between align-items-center" href="#"><span>Personal finance</span><span class="fs-xs text-muted ms-3">13</span></a></li>
+                    <li class="widget-list-item"><a class="widget-list-link d-flex justify-content-between align-items-center" href="#"><span>Travel &amp; vacation</span><span class="fs-xs text-muted ms-3">7</span></a></li>
+                    <li class="widget-list-item"><a class="widget-list-link d-flex justify-content-between align-items-center" href="#"><span>Lifestyle</span><span class="fs-xs text-muted ms-3">34</span></a></li>
+                    <li class="widget-list-item"><a class="widget-list-link d-flex justify-content-between align-items-center" href="#"><span>Technology</span><span class="fs-xs text-muted ms-3">6</span></a></li>
+                </ul>
+            </div>
+            <!-- Recent posts-->
+            <div class="widget mb-grid-gutter pb-grid-gutter border-bottom mx-lg-2">
+                <h3 class="widget-title">Recent posts</h3>
+                {% show_recent_posts 10 %}
+            </div>
+            <!-- Popular tags-->
+            <div class="widget pb-grid-gutter mx-lg-2">
+                <h3 class="widget-title">Popular tags</h3>
+                    {% for tag in post.tags.all %}
+                    <a class="btn-tag me-2 my-2 bg-success" href="{% url 'post_tag' tag.slug %}"># {{ tag.name }}</a>
+                    {% if not forloop.last %} {% endif %} {% endfor %}
+                        
+                    <a class="btn-tag me-2 mb-2" href="#">#fashion</a>
+                    <a class="btn-tag me-2 mb-2" href="#">#gadgets</a>
+                    <a class="btn-tag me-2 mb-2" href="#">#online shopping</a>
+                    <a class="btn-tag me-2 mb-2" href="#">#top brands</a>
+                    <a class="btn-tag me-2 mb-2" href="#">#travel</a>
+                    <a class="btn-tag me-2 mb-2" href="#">#cartzilla news</a>
+                    <a class="btn-tag me-2 mb-2" href="#">#personal finance</a>
+                    <a class="btn-tag me-2 mb-2" href="#">#tips &amp; tricks</a>
+            </div>
+            <!-- Promo banner-->
+            <div class="bg-size-cover bg-position-center rounded-3 py-5 mx-lg-2" style="background-image: url(https://cartzilla.createx.studio/img/blog/banner-bg.jpg);">
+                <div class="py-5 px-4 text-center">
+                    <h5 class="mb-2">Your Add Banner Here</h5>
+                    <p class="fs-sm text-muted">Hurry up to reserve your spot</p><a class="btn btn-primary btn-shadow btn-sm" href="#">Contact us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>

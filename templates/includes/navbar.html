@@ -9,7 +9,7 @@
                 <div class="container-fluid">
                     <a class="navbar-brand d-none d-sm-block flex-shrink-0" href="/"><img src="https://cartzilla.createx.studio/img/logo-dark.png" width="142" alt="Cartzilla"></a>
                     <a class="navbar-brand d-sm-none flex-shrink-0 me-2" href="/"><img src="https://cartzilla.createx.studio/img/logo-icon.png" width="74" alt="Cartzilla"></a>
-                    <form action="{% url 'search' %}" class="search h-auto" method='GET'>
+                    <form action="{% url 'search' %}" class="search h-auto w-auto" method='GET'>
                         <div class="input-group d-none d-lg-flex mx-4">
                             <input class="form-control rounded-end pe-5" type="text" placeholder="Search for products" name="keyword">
                             <i class="ci-search position-absolute top-50 end-0 translate-middle-y text-muted fs-base me-3"></i>
@@ -118,8 +118,8 @@
                             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{% url 'home' %}">Home</a></li>
                             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{% url 'store' %}">Shop</a></li>
                             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{% url 'blog' %}">Blog</a></li>
-                            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{% url 'store' %}">Chat</a></li>
-                            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{% url 'store' %}">About</a></li>
+                            {% comment %} <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{% url 'store' %}">Chat</a></li> {% endcomment %}
+                            {% comment %} <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{% url 'store' %}">About</a></li> {% endcomment %}
                             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{% url 'contact' %}">Contact</a></li>
                         </ul>
                     </div>

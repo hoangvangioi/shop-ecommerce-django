@@ -67,102 +67,99 @@
 
 	</div>
 
-<!-- Fade transition + Layer animations -->
-<div class="tns-carousel container">
-	<div class="tns-carousel-inner" data-carousel-options='{"mode": "gallery", "nav": false}'>
-	  <div>
-		<div class="bg-faded-primary text-center py-5 px-3">
-		  <h3 class="from-top">From top to bottom</h3>
-		  <p class="fs-lg mb-4 pb-3 from-bottom delay-1">From bottom to top</p>
-		  <button class="btn btn-primary scale-down delay-2" type="button">Scale down</button>
-		</div>
-	  </div>
-	  <div>
-		<div class="bg-faded-success text-center py-5 px-3">
-		  <h3 class="from-start">From left to right</h3>
-		  <p class="fs-lg mb-4 pb-3 from-end">From right to left</p>
-		  <button class="btn btn-success scale-up delay-2" type="button">Scale up</button>
-		</div>
-	  </div>
-	</div>
-  </div>
-
-
-  <br class="my-3">
-
-
-
-<div class="container pb-5 mb-2 mb-md-4">
-	
-	<header class="section-heading">
-		<a href="{% url 'store' %}" class="btn btn-outline-primary float-end">See all</a>
-		<h3 class="section-title">Popular products</h3>
-	</header><!-- sect-heading -->
-
-	<!-- Products grid-->
-	<div class="row pt-3 mx-n2">
-
-		{% for product in products %}
-	  <!-- Product-->
-	  <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-grid-gutter">
-		<div class="card product-card-alt">
-		  <div class="product-thumb">
-			<div class="product-card-actions"><a class="btn btn-light btn-icon btn-shadow fs-base mx-2" href="{{ product.get_absolute_url }}"><i class="ci-eye"></i></a>
-			</div><a class="product-thumb-overlay" href="{{ product.get_absolute_url }}"></a><img src="{{ product.product_images.url }}" alt="Product">
-		  </div>
-		  <div class="card-body">
-			<div class="d-flex flex-wrap justify-content-between align-items-start pb-2">
-			  <div class="text-muted fs-xs me-1">by <a class="product-meta fw-medium" href="#">Createx Std. </a>in <a class="product-meta fw-medium" href="#">Graphics</a></div>
-			  <div class="star-rating">
-				  <i class="star-rating-icon ci-star-filled active"></i>
-				  <i class="star-rating-icon ci-star-filled active"></i>
-				  <i class="star-rating-icon ci-star-filled active"></i>
-				  <i class="star-rating-icon ci-star-filled active"></i>
-				  <i class="star-rating-icon ci-star-filled active"></i>
-			  </div>
-
-			  <div class="rating-star">
-				<span>
-					<i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
-					<i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
-					<i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
-					<i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
-					<i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
-					</span>
+	<!-- Fade transition + Layer animations -->
+	<div class="tns-carousel container">
+		<div class="tns-carousel-inner" data-carousel-options='{"mode": "gallery", "nav": false}'>
+			<div>
+				<div class="bg-faded-primary text-center py-5 px-3">
+					<h3 class="from-top">From top to bottom</h3>
+					<p class="fs-lg mb-4 pb-3 from-bottom delay-1">From bottom to top</p>
+					<button class="btn btn-primary scale-down delay-2" type="button">Scale down</button>
+				</div>
 			</div>
-
+			<div>
+				<div class="bg-faded-success text-center py-5 px-3">
+					<h3 class="from-start">From left to right</h3>
+					<p class="fs-lg mb-4 pb-3 from-end">From right to left</p>
+					<button class="btn btn-success scale-up delay-2" type="button">Scale up</button>
+				</div>
 			</div>
-			<h3 class="product-title fs-sm mb-2"><a href="{{ product.get_absolute_url }}">{{ product.product_name }}</a></h3>
-			<div class="d-flex flex-wrap justify-content-between align-items-center">
-			  <div class="fs-sm me-2"><i class="ci-download text-muted me-1"></i>109<span class="fs-xs ms-1">Sales</span></div>
-			  <div class="bg-faded-accent text-accent rounded-1 py-1 px-2">$ {{ product.price }}</div>
-			</div>
-		  </div>
 		</div>
-	  </div>
-	  {% endfor %}
-
 	</div>
 
-	<hr class="my-3">
-	<!-- Pagination-->
-	<nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
-	  <ul class="pagination">
-		<li class="page-item"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
-	  </ul>
-	  <ul class="pagination">
-		<li class="page-item d-sm-none"><span class="page-link page-link-static">1 / 5</span></li>
-		<li class="page-item active d-none d-sm-block" aria-current="page"><span class="page-link">1<span class="visually-hidden">(current)</span></span></li>
-		<li class="page-item d-none d-sm-block"><a class="page-link" href="#">2</a></li>
-		<li class="page-item d-none d-sm-block"><a class="page-link" href="#">3</a></li>
-		<li class="page-item d-none d-sm-block"><a class="page-link" href="#">4</a></li>
-		<li class="page-item d-none d-sm-block"><a class="page-link" href="#">5</a></li>
-	  </ul>
-	  <ul class="pagination">
-		<li class="page-item"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
-	  </ul>
-	</nav>
-  </div>
+  	<br class="my-3">
+
+	<div class="container pb-5 mb-2 mb-md-4">
+		
+		<header class="section-heading">
+			<a href="{% url 'store' %}" class="btn btn-outline-primary float-end">See all</a>
+			<h3 class="section-title">Popular products</h3>
+		</header><!-- sect-heading -->
+
+		<!-- Products grid-->
+		<div class="row pt-3 mx-n2">
+
+			{% for product in products %}
+		<!-- Product-->
+		<div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-grid-gutter">
+			<div class="card product-card-alt">
+			<div class="product-thumb">
+				<div class="product-card-actions"><a class="btn btn-light btn-icon btn-shadow fs-base mx-2" href="{{ product.get_absolute_url }}"><i class="ci-eye"></i></a>
+				</div><a class="product-thumb-overlay" href="{{ product.get_absolute_url }}"></a><img src="{{ product.product_images.url }}" alt="Product">
+			</div>
+			<div class="card-body">
+				<div class="d-flex flex-wrap justify-content-between align-items-start pb-2">
+				<div class="text-muted fs-xs me-1">by <a class="product-meta fw-medium" href="#">Createx Std. </a>in <a class="product-meta fw-medium" href="#">Graphics</a></div>
+				<div class="star-rating">
+					<i class="star-rating-icon ci-star-filled active"></i>
+					<i class="star-rating-icon ci-star-filled active"></i>
+					<i class="star-rating-icon ci-star-filled active"></i>
+					<i class="star-rating-icon ci-star-filled active"></i>
+					<i class="star-rating-icon ci-star-filled active"></i>
+				</div>
+
+				<div class="rating-star">
+					<span>
+						<i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+						</span>
+				</div>
+
+				</div>
+				<h3 class="product-title fs-sm mb-2"><a href="{{ product.get_absolute_url }}">{{ product.product_name }}</a></h3>
+				<div class="d-flex flex-wrap justify-content-between align-items-center">
+				<div class="fs-sm me-2"><i class="ci-download text-muted me-1"></i>109<span class="fs-xs ms-1">Sales</span></div>
+				<div class="bg-faded-accent text-accent rounded-1 py-1 px-2">$ {{ product.price }}</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		{% endfor %}
+
+		</div>
+
+		<hr class="my-3">
+		<!-- Pagination-->
+		<nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+		<ul class="pagination">
+			<li class="page-item"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+		</ul>
+		<ul class="pagination">
+			<li class="page-item d-sm-none"><span class="page-link page-link-static">1 / 5</span></li>
+			<li class="page-item active d-none d-sm-block" aria-current="page"><span class="page-link">1<span class="visually-hidden">(current)</span></span></li>
+			<li class="page-item d-none d-sm-block"><a class="page-link" href="#">2</a></li>
+			<li class="page-item d-none d-sm-block"><a class="page-link" href="#">3</a></li>
+			<li class="page-item d-none d-sm-block"><a class="page-link" href="#">4</a></li>
+			<li class="page-item d-none d-sm-block"><a class="page-link" href="#">5</a></li>
+		</ul>
+		<ul class="pagination">
+			<li class="page-item"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+		</ul>
+		</nav>
+	</div>
 
 
 </main>

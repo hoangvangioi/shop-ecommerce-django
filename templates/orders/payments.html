@@ -110,11 +110,11 @@
                         <!-- PayPal Button Will Load -->
                     </div>
                 </div>
-                <div class="bg-white rounded-3 shadow-lg p-4 ms-lg-auto">
+                {% comment %} <div class="bg-white rounded-3 shadow-lg p-4 ms-lg-auto">
                     <div class="py-2 px-xl-2">
                         <h2 class="h6 text-center mb-3 pb-1">Hoặc bạn có thể liên hệ trực tiếp tới người bán để thanh toán quan liên kết dưới đây</h2>
                     </div>
-                </div>
+                </div> {% endcomment %}
             </aside>
             </div>
         </div>
@@ -159,7 +159,7 @@
             return actions.order.create({
                 purchase_units: [{
                     amount: {
-                        value: amount,
+                        value: 111,
                     }
                 }]
             });

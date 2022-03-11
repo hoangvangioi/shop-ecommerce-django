@@ -23,7 +23,7 @@
                 </div>
                 {% else %}
                 <div class="navbar-tool dropdown ms-2">
-                    <a class="navbar-tool-icon-box border dropdown-toggle" href="{% url 'dashboard' %}"><img src="https://cartzilla.createx.studio/img/marketplace/account/avatar-sm.png" width="30" alt="{{user.first_name}}"></a>
+                    <a class="navbar-tool-icon-box border dropdown-toggle" href="{% url 'dashboard' %}"><img src="https://cartzilla.createx.studio/img/marketplace/account/avatar-sm.png" width="32" alt="{{user.first_name}}"></a>
                     <a class="navbar-tool-text ms-n1" href="{% url 'dashboard' %}"><small>Welcome {{user.first_name}}!</small>My Account</a>
                     <div class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
                         <div style="min-width: 10rem; max-width: 14rem;">
@@ -49,16 +49,18 @@
                     </div>
                 </form>
 				<!-- Primary menu-->
-				<ul class="navbar-nav navbar-mega-nav">
+				<ul class="navbar-nav navbar-mega-nav justify-content-center">
                     <li class="nav-item dropdown"><a class="nav-link dropdown-toggle ps-lg-0" href="#" data-bs-toggle="dropdown"><i class="ci-view-grid me-2"></i>Category </a>
 						<ul class="dropdown-menu dropdown-menu-dark">
                             {% for category in links %}
 							<li class="dropdown position-static mb-0">
-                                <a class="dropdown-item py-2 border-bottom border-light" href="{{ category.get_absolute_url }}">
-                                    <span class="d-block">{{ category.category_name }}</span><small class="d-block opacity-60">Lorem ipsum</small>
+                                <a class="dropdown-item py-2 border-light" href="{{ category.get_absolute_url }}">
+                                    <span class="d-block">{{ category.category_name }}</span>
+                                    {% comment %} <small class="d-block opacity-60">Lorem ipsum</small> {% endcomment %}
                                 </a>
 								<div class="dropdown-menu dropdown-menu-dark h-100 animation-none mt-0 p-3">
                                     <a class="d-block" href="{{ category.get_absolute_url }}" style="width: 250px;"><img src="{{ category.category_image.url }}" alt="{{ category.category_name }}"></a>
+                                    <small class="d-block opacity-60 mt-2">{{ category.description }}</small>
                                 </div>
 							</li>
                             {% endfor %}

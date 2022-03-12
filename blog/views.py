@@ -13,6 +13,8 @@ from .models import *
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.views import View
+from django.contrib.sites.shortcuts import get_current_site
+
 
 # Create your views here.
 
@@ -109,8 +111,10 @@ def post_detail(request, year, month, day, post):
     similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags', '-publish')[:3]
     post.post_views = post.post_views + 1
     post.save()
+    current_site = get_current_site(request)
 
     return render(request,
                     'blog/blog-single.html',
-                    {'post': post,
+                    {'domain': current_site,
+                    'post': post,
                     'similar_posts': similar_posts})

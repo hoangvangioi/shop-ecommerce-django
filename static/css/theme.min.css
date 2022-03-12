@@ -13976,11 +13976,11 @@ dd {
     content: ""
 }
 
-.ci-star-filled:before {
+.ci-star:before {
     content: ""
 }
 
-.ci-star:before {
+.ci-star-o:before {
     content: ""
 }
 

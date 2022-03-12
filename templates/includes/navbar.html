@@ -40,7 +40,7 @@
                     </a>
 				</div>
 			</div>
-			<div class="collapse navbar-collapse me-auto order-lg-2" id="navbarCollapse">
+			<div class="collapse navbar-collapse me-auto order-lg-2 justify-content-center" id="navbarCollapse">
 				<!-- Search-->
                 <form action="{% url 'search' %}" class="search" method='GET'>
                     <div class="input-group d-lg-none my-3">
@@ -49,7 +49,7 @@
                     </div>
                 </form>
 				<!-- Primary menu-->
-				<ul class="navbar-nav navbar-mega-nav justify-content-center">
+				<ul class="navbar-nav navbar-mega-nav">
                     <li class="nav-item dropdown"><a class="nav-link dropdown-toggle ps-lg-0" href="#" data-bs-toggle="dropdown"><i class="ci-view-grid me-2"></i>Category </a>
 						<ul class="dropdown-menu dropdown-menu-dark">
                             {% for category in links %}

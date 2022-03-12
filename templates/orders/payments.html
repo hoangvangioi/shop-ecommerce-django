@@ -1,14 +1,12 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block content %} {% load l10n %}
 
 <main class="page-wrapper">
 
-
-
-    <!-- templates/payment.html -->
+    {% comment %} <!-- templates/payment.html -->
     <form action="{{ form.action }}" method="{{ form.method }}">
         {% csrf_token %} {{ form.as_p }}
         <p><input type="submit" value="Proceed" /></p>
-    </form>
+    </form> {% endcomment %}
 
 
     <!-- Page Title-->
@@ -138,7 +136,9 @@
         return cookieValue;
     }
 
-    var amount = "{{ grand_total }}"
+
+    
+    var amount = "{{ grand_total|unlocalize }}"
     var url = "{% url 'payments' %}"
     var csrftoken = getCookie('csrftoken');
     var orderID = "{{order.order_number}}"
@@ -159,7 +159,7 @@
             return actions.order.create({
                 purchase_units: [{
                     amount: {
-                        value: 111,
+                        value: amount,
                     }
                 }]
             });

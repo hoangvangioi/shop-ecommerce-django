@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from store.models import Product, ReviewRating
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 
 
@@ -13,6 +14,9 @@ from store.models import Product, ReviewRating
 def home(request):
     products = Product.objects.all().filter(is_available=True).order_by('created_date')
 
+    paginator = Paginator(products, 9)
+    page = request.GET.get('page')
+    paged_products = paginator.get_page(page)
     # Get the reviews
     reviews = None
     for product in products:
@@ -21,6 +25,7 @@ def home(request):
     context = {
         'products': products,
         'reviews': reviews,
+        'products': paged_products,
     }
     return render(request, 'home.html', context)
 

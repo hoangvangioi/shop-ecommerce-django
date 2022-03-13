@@ -15,7 +15,8 @@ from django.contrib.sites.shortcuts import get_current_site
 def store(request, category_slug=None):
     categories = None
     products = None
-
+    reviews = None
+    
     if category_slug != None:
         categories = get_object_or_404(Category, slug=category_slug)
         products = Product.objects.filter(category=categories, is_available=True)
@@ -30,7 +31,11 @@ def store(request, category_slug=None):
         paged_products = paginator.get_page(page)
         product_count = products.count()
 
+    for product in products:
+        reviews = ReviewRating.objects.filter(product_id=product.id, status=True)
+
     context = {
+        'reviews': reviews,
         'products': paged_products,
         'product_count': product_count,
     }

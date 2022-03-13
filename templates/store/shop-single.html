@@ -1,6 +1,5 @@
 {% extends "base.html" %} {% block content %}
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
 
 /* Hide Radio button */
@@ -123,17 +122,15 @@ ul.thumb li img{
                                     </div>
                                     <span> {{single_product.countReview}}  Reviews</span>
                                 </a>
-                                <button class="btn-wishlist me-0 me-lg-n3" type="button" data-bs-toggle="tooltip" title="Add to wishlist"><i class="ci-heart"></i></button>
                             </div>
 
                             <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
                                 <h1 class="h3 text-dark mb-0">{{ single_product.product_name }}</h1>
                             </div>
 
-                            <div class="mb-3"><span class="h3 fw-normal text-accent me-1">{{ single_product.price }}<small> VND</small></span>
+                            <div class="mb-3"><span class="h3 fw-normal text-accent me-1">$ {{ single_product.price }}</span>
                                 <span class="badge bg-danger badge-shadow align-middle mt-n2">Sale</span>
                             </div>
-
                             <div class="position-relative me-n4 mb-3">
 
                             {% if single_product.stock <= 0 %}
@@ -145,7 +142,6 @@ ul.thumb li img{
                                 {% endif %}
                             </div>
                                 <div class="mb-3">
-
                                     <div class="d-flex justify-content-between align-items-center pb-1">
                                         <label class="form-label" for="product-color">Color:</label>
                                     </div>
@@ -155,7 +151,6 @@ ul.thumb li img{
 										<option value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}</option>
 										{% endfor %}
                                     </select>
-
                                     <div class="d-flex justify-content-between align-items-center pb-1">
                                         <label class="form-label" for="product-size">Size:</label>
                                     </div>
@@ -166,16 +161,12 @@ ul.thumb li img{
 										{% endfor %}
                                     </select>
                                 </div>
-
-
                                 <div class="mb-3 d-flex align-items-center">
-
                                     {% if single_product.stock <= 0 %}
                                         <h4 class="btn-shadow d-block w-100">Out of stock </h4>
                                     {% else %}
 							            <button type="submit" class="btn btn-primary btn-shadow d-block w-100"><i class="fas fa-shopping-cart fs-lg me-2"> </i> <span class="text"> Add to Cart</span></button>
                                     {% endif %}
-
                                 </div>
                             <!-- Product panels-->
                             <div class="accordion mb-4" id="productPanels">
@@ -221,11 +212,11 @@ ul.thumb li img{
                             </div>
                             <div>
                                 <div class="star-rating">
-                                    <i class="star-rating-icon active fa fa-star{% if review.rating == 0.5 %}-half-alt{% elif review.rating < 1 %}-o {% endif %}" aria-hidden="true"></i>
-                                    <i class="star-rating-icon active fa fa-star{% if review.rating == 1.5 %}-half-alt{% elif review.rating < 2 %}-o {% endif %}" aria-hidden="true"></i>
-                                    <i class="star-rating-icon active fa fa-star{% if review.rating == 2.5 %}-half-alt{% elif review.rating < 3 %}-o {% endif %}" aria-hidden="true"></i>
-                                    <i class="star-rating-icon active fa fa-star{% if review.rating == 3.5 %}-half-alt{% elif review.rating < 4 %}-o {% endif %}" aria-hidden="true"></i>
-                                    <i class="star-rating-icon active fa fa-star{% if review.rating == 4.5 %}-half-alt{% elif review.rating < 5 %}-o {% endif %}" aria-hidden="true"></i>
+                                    <i class="star-rating-icon active ci-star{% if review.rating == 0.5 %}-half{% elif review.rating < 1 %}-o {% endif %}" aria-hidden="true"></i>
+                                    <i class="star-rating-icon active ci-star{% if review.rating == 1.5 %}-half{% elif review.rating < 2 %}-o {% endif %}" aria-hidden="true"></i>
+                                    <i class="star-rating-icon active ci-star{% if review.rating == 2.5 %}-half{% elif review.rating < 3 %}-o {% endif %}" aria-hidden="true"></i>
+                                    <i class="star-rating-icon active ci-star{% if review.rating == 3.5 %}-half{% elif review.rating < 4 %}-o {% endif %}" aria-hidden="true"></i>
+                                    <i class="star-rating-icon active ci-star{% if review.rating == 4.5 %}-half{% elif review.rating < 5 %}-o {% endif %}" aria-hidden="true"></i>
                                 </div>
                                 <div class="fs-ms text-muted"><h6 class="fs-md mb-2">{{review.subject}}</h6></div>
                             </div>
@@ -305,11 +296,11 @@ ul.thumb li img{
                             <div class="d-flex justify-content-between">
                                 <div class="product-price text-accent">$ {{ product.price }}</div>
                                 <div class="star-rating">
-                                    <i class="star-rating-icon ci-star-filled active"></i>
-                                    <i class="star-rating-icon ci-star-filled active"></i>
-                                    <i class="star-rating-icon ci-star-half active"></i>
-                                    <i class="star-rating-icon ci-star"></i>
-                                    <i class="star-rating-icon ci-star"></i>
+                                    <i class="star-rating-icon text-warning ci-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half{% endif %} active" aria-hidden="true"></i>
+                                    <i class="star-rating-icon text-warning ci-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half{% endif %} active" aria-hidden="true"></i>
+                                    <i class="star-rating-icon text-warning ci-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half{% endif %} active" aria-hidden="true"></i>
+                                    <i class="star-rating-icon text-warning ci-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half{% endif %} active" aria-hidden="true"></i>
+                                    <i class="star-rating-icon text-warning ci-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half{% endif %} active" aria-hidden="true"></i>
                                 </div>
                             </div>
                         </div>

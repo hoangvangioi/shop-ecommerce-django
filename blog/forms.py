@@ -1,5 +1,5 @@
-from collections import defaultdict
 from django import forms
+from django.views import View
 from .models import *
 
 
@@ -40,3 +40,17 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = ('name', 'email', 'subject', 'message')
+
+
+
+class CommentForm(forms.ModelForm):
+    comment = forms.CharField(max_length=1000, required=True, 
+        widget=forms.Textarea(attrs={
+            'class': 'form-control',
+            'rows': 4,
+            'placeholder': "Write comment..."
+            }))
+            
+    class Meta:
+        model = Comment
+        fields = ('comment',)

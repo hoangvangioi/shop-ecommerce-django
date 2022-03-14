@@ -31,7 +31,6 @@ urlpatterns = [
     path('', include('blog.urls')),
     path('orders/', include('orders.urls')),
     re_path(r'^ckeditor/',include('ckeditor_uploader.urls')),
-    
 ]
 
 if settings.DEBUG:
@@ -41,3 +40,9 @@ if settings.DEBUG:
 
 handler404 = 'ecommerce.views.error'
 handler500 = 'ecommerce.views.handler500'
+
+admin.site.site_header="Shop Hoàng Giỏi Admin"
+
+admin.site.site_title="Shop Hoàng Giỏi Admin Panel"
+
+admin.site.index_title="Welcome to Shop Hoàng Giỏi Admin Panel"

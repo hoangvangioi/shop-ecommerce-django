@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.urls import reverse
 from taggit.managers import TaggableManager
 
+
 # Create your models here.
 
 class PublishedManager(models.Manager):
@@ -51,22 +52,6 @@ class Post(models.Model):
 							 self.slug])
 
 		
-
-class TeamAbout(models.Model):
-	user = models.ForeignKey(Account, on_delete=models.CASCADE, null=True)
-	url_facebook = models.URLField()
-	url_instagram = models.URLField()
-	url_github = models.URLField()
-	position = models.CharField(max_length=100)
-
-
-class About(models.Model):
-	about_1 = models.CharField(max_length=1000)
-	about_2 = models.CharField(max_length=1000)
-	about_3 = models.CharField(max_length=1000)
-	team = models.ForeignKey(TeamAbout, on_delete=models.CASCADE, null=True)
-	
-	
 class Contact(models.Model):
 	timestamp = models.DateTimeField(auto_now_add=True)
 	name = models.CharField(verbose_name="Name", max_length=100)
@@ -81,3 +66,22 @@ class Contact(models.Model):
 		verbose_name_plural = 'Contact'
 		verbose_name = 'Contact'
 		ordering = ["timestamp"]
+
+
+
+class Comment(models.Model):
+	comment = models.TextField()
+	created_on = models.DateTimeField(default=timezone.now)
+	author = models.ForeignKey(Account, on_delete=models.CASCADE)
+	post = models.ForeignKey(Post, on_delete=models.CASCADE)
+	parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, related_name='+')
+
+	@property
+	def children(self):
+		return Comment.objects.filter(parent=self).order_by('-created_on').all()
+
+	@property
+	def is_parent(self):
+		if self.parent is None:
+			return True
+		return False

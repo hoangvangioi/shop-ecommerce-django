@@ -10,14 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
-from pathlib import Path
 import os
 from django.contrib.messages import constants as messages
 import django_heroku
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -54,6 +52,9 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     ]
+
+
+LOGIN_URL = 'login'  # or actual url
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

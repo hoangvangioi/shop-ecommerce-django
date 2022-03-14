@@ -1,7 +1,8 @@
 from django.contrib import admin
-from .models import About, Contact, Post, TeamAbout
+from .models import Contact, Post, Comment
 
 # Register your models here.
+
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
@@ -19,12 +20,4 @@ class ContactAdmin(admin.ModelAdmin):
 	list_display = ('id', 'timestamp', 'name', 'email')
 
 
-admin.site.register(About)
-admin.site.register(TeamAbout)
-
-
-# admin.site.register(Profile)
-
-# # Register your models here.
-# class CommentInline(admin.StackedInline):
-#     model = Comment
+admin.site.register(Comment)

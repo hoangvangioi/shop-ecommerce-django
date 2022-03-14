@@ -1,5 +1,4 @@
-from django.contrib.auth.models import User
-from django.shortcuts import render, get_object_or_404, redirect, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView, DetailView
 # from .forms import ContactForm, SearchForm
@@ -8,20 +7,14 @@ from django.db.models import Count
 from django.db.models import Q
 from django.views import generic
 
-from blog.forms import ContactForm
+from blog.forms import CommentForm, ContactForm
 from .models import *
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.views import View
 from django.contrib.sites.shortcuts import get_current_site
 
 
 # Create your views here.
-
-
-def home(request):
-    return render(request, 'blog/home.html')
-
 
 class ContactView(generic.FormView):
     template_name = "blog/contact.html"
@@ -33,19 +26,6 @@ class ContactView(generic.FormView):
         messages.success(self.request, 'Thanks for contacting us!')
         return super().form_valid(form)
 
-
-class AboutView(ListView):
-    model = About
-    queryset = About.objects.all()
-    context_object_name = "abouts"
-    template_name = "blog/about.html"
-    
-
-class TeamAboutView(ListView):
-    model = TeamAbout
-    queryset = TeamAbout.objects.all()
-    context_object_name = "abouts"
-    template_name = "blog/about.html"
 
 
 # search view
@@ -90,7 +70,11 @@ def blog(request, tag_slug=None):
         # If page is out of range deliver last page of results
         posts = paginator.page(paginator.num_pages)
 
-    return render(request, 'blog/blog-list.html', {'posts': posts, page: 'pages', 'tag': tag})
+    return render(request, 'blog/blog-list.html', 
+                    {'posts': posts, 
+                    'pages': page, 
+                    'tag': tag
+                    })
 
 
 class PostDetail(DetailView):
@@ -113,8 +97,22 @@ def post_detail(request, year, month, day, post):
     post.save()
     current_site = get_current_site(request)
 
-    return render(request,
-                    'blog/blog-single.html',
+    form = CommentForm(request.POST)
+    
+    if form.is_valid():
+        new_comment = form.save(commit=False)
+        new_comment.author = request.user
+        new_comment.post = post
+        new_comment.save()
+
+    comments = Comment.objects.filter(post=post).order_by('-created_on')
+    comments_count = comments.count()
+
+    return render(request, 'blog/blog-single.html',
                     {'domain': current_site,
                     'post': post,
-                    'similar_posts': similar_posts})
+                    'similar_posts': similar_posts,
+                    'form': form,
+                    'comments': comments,
+                    'comments_count': comments_count,
+                    })

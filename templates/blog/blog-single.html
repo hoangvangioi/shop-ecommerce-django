@@ -26,8 +26,8 @@
                     <div class="d-flex align-items-center fs-sm mb-2">
                         <a class="blog-entry-meta-link" href="#">
                             <div class="blog-entry-author-ava"><img src="{{ post.featured_image.url }}" alt="{{ post.author }}"></div>{{ post.author }}</a>
-                        <span class="blog-entry-meta-divider"></span><a class="blog-entry-meta-link" href="#">{{ post.publish|date:"l, j F Y" }}</a>
-                    </div>
+                        <span class="blog-entry-meta-divider"></span><a class="blog-entry-meta-link" href="#">{{ post.publish|date:"l, j F Y" }}</a></div>
+                    <div class="fs-sm mb-2"><a class="blog-entry-meta-link text-nowrap" href="#comments" data-scroll><i class="ci-message"></i>{{ comments_count }}</a></div>
                 </div>
                 <!-- Gallery-->
                 <div class="gallery row pb-2 justify-content-center">
@@ -60,14 +60,14 @@
                 </nav>
                 <!-- Comments-->
                 <div class="pt-2 mt-5" id="comments">
-                    <h2 class="h4">Comments</h2>
+                    <h2 class="h4">Comments<span class="badge bg-secondary fs-sm text-body align-middle ms-2">{{ comments_count }}</span></h2>
                     <!-- comment-->
-                    {% for comment in comments_post %}
+                    {% for comment in comments %}
                     {% if comment.is_parent %}
                     <div class="d-flex align-items-start py-4 border-bottom border-top"><img class="rounded-circle" src="{{ userprofile.profile_picture.url }}" width="50" alt="...">
                         <div class="ps-3">
                             <div class="d-flex justify-content-between align-items-center mb-2">
-                                <h6 class="fs-md mb-0">@{{ comment.author }}</h6>
+                                <h6 class="fs-md mb-0">{{ comment.author }}</h6>
                             </div>
                             <p class="fs-md mb-1">{{ comment.comment }}</p><span class="fs-ms text-muted"><i class="ci-time align-middle me-2"></i>{{ comment.created_on }}</span>
                         </div>

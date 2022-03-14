@@ -104,7 +104,6 @@ def post_detail(request, year, month, day, post):
         new_comment.save()
 
     comments = Comment.objects.filter(post=post).order_by('-created_on')
-    comments_count = comments.count()
 
     return render(request, 'blog/blog-single.html',
                     {'domain': current_site,
@@ -112,5 +111,4 @@ def post_detail(request, year, month, day, post):
                     'similar_posts': similar_posts,
                     'form': form,
                     'comments': comments,
-                    'comments_count': comments_count,
                     })

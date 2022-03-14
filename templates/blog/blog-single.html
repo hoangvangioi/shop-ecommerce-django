@@ -62,7 +62,7 @@
                 <div class="pt-2 mt-5" id="comments">
                     <h2 class="h4">Comments</h2>
                     <!-- comment-->
-                    {% for comment in comments %}
+                    {% for comment in comments_post %}
                     {% if comment.is_parent %}
                     <div class="d-flex align-items-start py-4 border-bottom border-top"><img class="rounded-circle" src="{{ userprofile.profile_picture.url }}" width="50" alt="...">
                         <div class="ps-3">

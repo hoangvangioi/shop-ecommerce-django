@@ -37,7 +37,7 @@
 
 
 		<!-- Google Tag Manager-->
-		<script>
+		{% comment %} <script>
 				(function(w, d, s, l, i) {
 						w[l] = w[l] || [];
 						w[l].push({
@@ -52,21 +52,21 @@
 								'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
 						f.parentNode.insertBefore(j, f);
 				})(window, document, 'script', 'dataLayer', 'GTM-WKV3GT5');
-		</script>
+		</script> {% endcomment %}
 
 		<link rel="stylesheet" href="{% static 'css/loading.css' %}">
 		
 		<!-- Page loading scripts -->
 		<script>
-				(function() {
-						window.onload = function() {
-								const preloader = document.querySelector('.page-loading');
-								preloader.classList.remove('active');
-								setTimeout(function() {
-										preloader.remove();
-								}, 200);
-						};
-				})();
+			(function() {
+				window.onload = function() {
+					const preloader = document.querySelector('.page-loading');
+					preloader.classList.remove('active');
+					setTimeout(function() {
+							preloader.remove();
+					}, 200);
+				};
+			})();
 		</script>
 
 		<!-- PayPal Script -->
@@ -104,8 +104,8 @@
 		<!-- Main theme script-->
 		<script src="{% static 'js/theme.min.js' %}"></script>
 
-		<script src="{% static 'js/lg-fullscreen.min.js' %}"></script>
-		<script src="{% static 'js/lg-zoom.min.js' %}"></script>
+		{% comment %} <script src="{% static 'js/lg-fullscreen.min.js' %}"></script>
+		<script src="{% static 'js/lg-zoom.min.js' %}"></script> {% endcomment %}
 
 </body>
 

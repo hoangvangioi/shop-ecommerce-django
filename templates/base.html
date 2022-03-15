@@ -18,7 +18,7 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
 		<link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
 		<link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
-		<link rel="manifest" href="./site.webmanifest">
+		<link rel="manifest" href="{% static 'site.webmanifest' %}">
 		<link rel="mask-icon" color="#fe6a6a" href="{% static 'img/safari-pinned-tab.svg' %}">
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="theme-color" content="#ffffff">
@@ -53,13 +53,12 @@
 					preloader.classList.remove('active');
 					setTimeout(function() {
 							preloader.remove();
-					}, 200);
+					}, 100);
 				};
 			})();
 		</script>
 
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2146269335848308"
-     crossorigin="anonymous"></script>
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2146269335848308" crossorigin="anonymous"></script>
 
 		<!-- PayPal Script -->
 		<script src="https://www.paypal.com/sdk/js?client-id=AVBSMqNtoZ1IUO6lrSe6-vm9AIV1ZKN8CgXu_nINRs80xELRs650mh3yR62groIUg-GCe59Od_EFOG6O&currency=USD"></script>

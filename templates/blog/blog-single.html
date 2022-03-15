@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block title %}{{post.title}}{% endblock title %} {% block content %} {% load static %}
+{% extends 'base.html' %} {% block title %}{{post.title}}{% endblock title %} {{ post.featured_image.url }} {% block share %}  {% endblock %} {% block content %} {% load static %}
 <main class="page-wrapper">
     <!-- Page Title (Light)-->
     <div class="bg-secondary py-4">

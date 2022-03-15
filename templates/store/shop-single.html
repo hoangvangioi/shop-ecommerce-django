@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% load static %}
 {% block title %}{{ single_product.product_name }}{% endblock title %}
-{% block share %} {{ single_product.product_images.url }} {% endblock %}
+{% block share %}{{ single_product.product_images.url }}{% endblock share %}
 {% block content %}
 
 <style>

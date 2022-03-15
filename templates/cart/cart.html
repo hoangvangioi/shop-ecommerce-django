@@ -1,14 +1,14 @@
 {% extends "base.html" %} {% block title %} Giỏ hàng {% endblock %} {% block content %}
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
 <main class="page-wrapper">
-
+    
     {% if not cart_items %}
-    <h2 class="text-center">Your Shopping Cart is Empty</h2>
-    <br>
-    <div class="text-center">
-        <a href="{% url 'store' %}" class="btn btn-primary">Continue Shopping</a>
+    <div class="container pb-5 pt-5 pt-5 mb-2 mb-md-4">
+        <h2 class="text-center">Your Shopping Cart is Empty</h2>
+        <br>
+        <div class="text-center">
+            <a href="{% url 'store' %}" class="btn btn-primary">Continue Shopping</a>
+        </div>
     </div>
     {% else %}
 

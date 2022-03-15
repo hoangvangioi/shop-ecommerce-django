@@ -1,4 +1,4 @@
-{% extends "base.html" %} 
+{% extends "base.html" %} {% load static %}
 {% block title %}{{ single_product.product_name }}{% endblock title %}
 {% block content %}
 
@@ -207,7 +207,7 @@ ul.thumb li img{
                     {% for review in reviews %}
                     <div class="product-review pb-4 mb-4 border-bottom">
                         <div class="d-flex mb-3">
-                            <div class="d-flex align-items-center me-4 pe-2"><img class="rounded-circle" src="https://cartzilla.createx.studio/img/shop/reviews/01.jpg" width="50" alt="Rafael Marquez">
+                            <div class="d-flex align-items-center me-4 pe-2"><img class="rounded-circle" style="border-radius: 50%;" src="{% static 'img/avatar.png' %}" width="50" alt="Rafael Marquez">
                                 <div class="ps-3">
                                     <h6 class="fs-sm mb-0">{{review.user.full_name}}</h6><span class="fs-ms text-muted">{{review.updated_at}}</span>
                                 </div>

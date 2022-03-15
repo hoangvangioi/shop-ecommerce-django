@@ -1,9 +1,10 @@
+{% load static %}
 <!-- Navbar -->
 <header class="bg-accent navbar-sticky">
 	<div class="navbar navbar-expand-lg navbar-dark">
 		<div class="container">
-			<a class="navbar-brand d-none d-sm-block me-4 order-lg-1" href="{% url 'home' %}"><img src="https://cartzilla.createx.studio/img/logo-light.png" width="142" alt="Cartzilla"></a>
-			<a class="navbar-brand d-sm-none me-2 order-lg-1" href="{% url 'home' %}" style="min-width: 4.625rem;"><img src="https://cartzilla.createx.studio/img/logo-icon-light.png" width="74" alt="Cartzilla"></a>
+			<a class="navbar-brand d-none d-sm-block me-4 order-lg-1" href="{% url 'home' %}"><img src="{% static 'img/logo-light.png' %}" width="142" alt="Cartzilla"></a>
+			<a class="navbar-brand d-sm-none me-2 order-lg-1" href="{% url 'home' %}" style="min-width: 4.625rem;"><img src="{% static 'img/logo-icon-light.png' %}" width="74" alt="Cartzilla"></a>
 			<div class="navbar-toolbar d-flex align-items-center order-lg-3">
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button>
                 <a class="navbar-tool d-none d-lg-flex" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#searchBox" role="button" aria-expanded="false" aria-controls="searchBox"><span class="navbar-tool-tooltip">Search</span>
@@ -23,7 +24,7 @@
                 </div>
                 {% else %}
                 <div class="navbar-tool dropdown ms-2">
-                    <a class="navbar-tool-icon-box border dropdown-toggle" href="{% url 'dashboard' %}"><img src="https://cartzilla.createx.studio/img/marketplace/account/avatar-sm.png" width="32" alt="{{user.first_name}}"></a>
+                    <a class="navbar-tool-icon-box border dropdown-toggle" href="{% url 'dashboard' %}"><img style="border-radius: 50%;" src="{% static 'img/avatar.png' %}" alt="{{user.first_name}}"></a>
                     <a class="navbar-tool-text ms-n1" href="{% url 'dashboard' %}"><small>Welcome {{user.first_name}}!</small>My Account</a>
                     <div class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
                         <div style="min-width: 10rem; max-width: 14rem;">

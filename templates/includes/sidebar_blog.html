@@ -1,4 +1,4 @@
-{% load blog_tags %}
+{% load blog_tags %} {% load static %}
 <aside class="col-lg-4">
     <!-- Sidebar-->
     <div class="offcanvas offcanvas-collapse offcanvas-end border-start ms-lg-auto" id="blog-sidebar" style="max-width: 22rem;">
@@ -41,7 +41,7 @@
                     <a class="btn-tag me-2 mb-2" href="#">#tips &amp; tricks</a>
             </div> {% endcomment %}
             <!-- Promo banner-->
-            <div class="bg-size-cover bg-position-center rounded-3 py-5 mx-lg-2" style="background-image: url(https://cartzilla.createx.studio/img/blog/banner-bg.jpg);">
+            <div class="bg-size-cover bg-position-center rounded-3 py-5 mx-lg-2" style="background-image: url({% static 'img/banner-bg.jpg' %});">
                 <div class="py-5 px-4 text-center">
                     <h5 class="mb-2">Your Add Banner Here</h5>
                     <p class="fs-sm text-muted">Hurry up to reserve your spot</p><a class="btn btn-primary btn-shadow btn-sm" href="{% url 'contact' %}">Contact us</a>

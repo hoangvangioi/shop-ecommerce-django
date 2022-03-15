@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% load static %}
 {% block title %} Cửa hàng {% endblock %}
 {% block content %}
 
@@ -200,11 +200,11 @@
 					<div class="py-4 my-2 my-md-0 py-md-5 px-4 ms-md-3 text-center text-sm-start">
 						<h4 class="fs-lg fw-light mb-2">Converse All Star</h4>
 						<h3 class="mb-4">Make Your Day Comfortable</h3><a class="btn btn-primary btn-shadow btn-sm" href="#">Shop Now</a>
-					</div><img class="d-block ms-auto" src="https://cartzilla.createx.studio/img/shop/catalog/banner.jpg" alt="Shop Converse">
+					</div><img class="d-block ms-auto" src="{% static 'img/banner.jpg' %}" alt="Shop Converse">
 				</div>
 			</div>
 			<div class="col-md-4 mb-4">
-				<div class="d-flex flex-column h-100 bg-size-cover bg-position-center rounded-3 py-4" style="background-image: url(https://cartzilla.createx.studio/img/blog/banner-bg.jpg);">
+				<div class="d-flex flex-column h-100 bg-size-cover bg-position-center rounded-3 py-4" style="background-image: url({% static 'img/banner-bg.jpg' %});">
 					<div class="py-4 my-2 px-4 text-center">
 						<h5 class="mb-2">Your Add Banner Here</h5>
 						<p class="fs-sm text-muted">Hurry up to reserve your spot</p><a class="btn btn-primary btn-shadow btn-sm" href="#">Contact us</a>

@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from django.contrib.messages import constants as messages
 import django_heroku
+import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -100,35 +101,21 @@ AUTH_USER_MODEL = 'accounts.Account'
 
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'd6jn2jrlntarpo',
-#         'USER': 'ttfscyidyturkw',
-#         'PASSWORD': 'da07d986fe5e4e6b14bd511240ccb1a52f9820be392ccc468047053af34ed91b',
-#         'HOST': 'ec2-54-156-110-139.compute-1.amazonaws.com',
-#         'PORT': '5432',
-#         }
-#     }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-        'NAME': os.path.join(BASE_DIR,'db.sqlite3'),
+if DEBUG == True:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR,'db.sqlite3'),
+        }
     }
-}
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'postgres',
-#         'USER': 'postgres',
-#         'PASSWORD': 'HGioi2803*',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#         }
-#     }
+else:
+    DATABASES = {
+        'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        }
+    }
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 #pip install psycopg2

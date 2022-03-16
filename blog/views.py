@@ -12,6 +12,7 @@ from .models import *
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.sites.shortcuts import get_current_site
+from accounts.models import UserProfile
 
 
 # Create your views here.
@@ -44,7 +45,7 @@ class ContactView(generic.FormView):
 
 
 class PostList(ListView):
-    model = Post
+    model = Post, UserProfile
     # paginate_by = 2
     queryset = Post.published.all()
     context_object_name = "posts"

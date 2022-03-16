@@ -18,7 +18,7 @@ from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
-from django.conf.urls import handler404, handler500
+from django.conf.urls import handler403, handler404, handler500
 
 
 urlpatterns = [
@@ -38,8 +38,10 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     
 
+handler403 = 'ecommerce.views.handler403'
 handler404 = 'ecommerce.views.error'
 handler500 = 'ecommerce.views.handler500'
+
 
 admin.site.site_header="Shop Hoàng Giỏi Admin"
 

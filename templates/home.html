@@ -4,8 +4,6 @@
 {% block content %}
 
 <main class="page-wrapper">
-
-
 	<!-- Used for marketplace templates with filters on top-->
 	<div class="bg-accent pt-4 pb-5">
 		<div class="container pt-2 pb-3 pt-lg-3 pb-lg-4">
@@ -46,7 +44,7 @@
 			</div>
 		</div>
 		<!-- Category grid-->
-		<h2 class="h3 pb-2 mb-grid-gutter text-center">Marketplace category</h2>
+		<h2 class="h3 pb-2 mb-grid-gutter text-center">Product Category</h2>
 
 		<!-- Marketplace category -->
 		<section class="pb-5 mb-2 mb-xl-4">
@@ -112,7 +110,6 @@
 					</div>
 					<div class="card-body">
 						<div class="d-flex flex-wrap justify-content-between align-items-start pb-2">
-						<div class="text-muted fs-xs me-1">by <a class="product-meta fw-medium" href="#">Createx Std. </a>in <a class="product-meta fw-medium" href="#">Graphics</a></div>
 							<div class="star-rating">
 								<i class="star-rating-icon ci-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half {% endif %} active"></i>
 								<i class="star-rating-icon ci-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half {% endif %} active"></i>
@@ -120,7 +117,6 @@
 								<i class="star-rating-icon ci-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half {% endif %} active"></i>
 								<i class="star-rating-icon ci-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half {% endif %} active"></i>
 							</div>
-
 						</div>
 						<div class="bg-faded-accent text-accent rounded-1 py-1 px-2 float-end">$ {{ product.price }}</div>
 						<h3 class="product-title fs-sm mb-2"><a href="{{ product.get_absolute_url }}">{{ product.product_name }}</a></h3>
@@ -131,7 +127,6 @@
 
 		</div>
 	</div>
-
 </main>
 
 {% endblock content %}

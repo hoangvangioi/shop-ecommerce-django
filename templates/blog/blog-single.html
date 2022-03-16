@@ -28,7 +28,7 @@
                 <div class="d-flex flex-wrap justify-content-between align-items-center pb-4 mt-n1">
                     <div class="d-flex align-items-center fs-sm mb-2">
                         <a class="blog-entry-meta-link" href="#">
-                            <div class="blog-entry-author-ava"><img src="{{userprofile.profile_picture.url}}" alt="..."></div>{{ post.author }}</a>
+                            <div class="blog-entry-author-ava"><img src="{% static 'img/avatar.png' %}" alt="..."></div>Hoàng Giỏi</a>
                         <span class="blog-entry-meta-divider"></span><a class="blog-entry-meta-link" href="#">{{ post.publish|date:"l, j F Y" }}</a></div>
                     <div class="fs-sm mb-2"><a class="blog-entry-meta-link text-nowrap" href="#comments" data-scroll><i class="ci-message"></i>{{ comments_count }}</a></div>
                 </div>
@@ -67,10 +67,12 @@
                     <!-- comment-->
                     {% for comment in comments %}
                     {% if comment.is_parent %}
-                    <div class="d-flex align-items-start py-4 border-bottom border-top"><img class="rounded-circle" src="{{ userprofile.profile_picture.url }}" width="50" alt="...">
+                    <div class="d-flex align-items-start py-4 border-bottom border-top"><img class="rounded-circle" src="{% static 'img/avatar.png' %}" width="50" alt="...">
                         <div class="ps-3">
                             <div class="d-flex justify-content-between align-items-center mb-2">
-                                <h6 class="fs-md mb-0">{{ comment.author }}</h6>
+                                <h6 class="fs-md mb-0">User
+                                    {% comment %} {{ comment.author }} {% endcomment %}
+                                </h6>
                             </div>
                             <p class="fs-md mb-1">{{ comment.comment }}</p><span class="fs-ms text-muted"><i class="ci-time align-middle me-2"></i>{{ comment.created_on }}</span>
                         </div>
@@ -83,7 +85,7 @@
                     {% else %}
                     <div class="card border-0 shadow mt-2 mb-4">
                         <div class="card-body">
-                            <div class="d-flex align-items-start"><img class="rounded-circle" src="{{ userprofile.profile_picture.url }}" width="50" alt="...">
+                            <div class="d-flex align-items-start"><img class="rounded-circle" src="{% static 'img/avatar.png' %}" width="50" alt="...">
                                 <form class="w-100 needs-validation ms-3" active="" method="POST" novalidate>
                                     {% csrf_token %}
                                     <div class="mb-3">{{ form.comment }}</div>
@@ -109,7 +111,7 @@
                     <!-- article-->
                     <article>
                         <a class="blog-entry-thumb mb-3" href="{{ post.get_absolute_url }}"><img src="{{ post.featured_image.url }}" alt="Post"></a>
-                        <div class="d-flex align-items-center fs-sm mb-2"><a class="blog-entry-meta-link" href="#">by {{ post.author }}</a><span class="blog-entry-meta-divider"></span><a class="blog-entry-meta-link" href="#">Sep 16</a></div>
+                        <div class="d-flex align-items-center fs-sm mb-2"><a class="blog-entry-meta-link" href="#">by Hoàng Giỏi</a><span class="blog-entry-meta-divider"></span><a class="blog-entry-meta-link" href="#">Sep 16</a></div>
                         <h3 class="h6 blog-entry-title"><a href="{{ post.get_absolute_url }}">{{post.title}}</a></h3>
                     </article>
                     {% empty %}

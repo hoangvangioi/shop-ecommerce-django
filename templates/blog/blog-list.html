@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %}
 {% block title %}Bài viết{% endblock %} {% block content %} {% comment %} {% load blog_tags %} {% endcomment %}
 <main class="page-wrapper">
 
@@ -34,8 +34,7 @@
                         <div class="d-flex align-items-center fs-sm pb-2 mb-1">
                             <a class="blog-entry-meta-link" href="{{ post.get_absolute_url }}">
                                 <div class="blog-entry-author-ava">
-                                    <img src="{{userprofile.profile_picture.url}}" alt="{{ post.author }}"></div>{{ post.author }}</a>
-
+                                    <img src="{% static 'img/avatar.png' %}" alt="Hoàng Giỏi"></div>Hoàng Giỏi</a>
                         </div>
                         <h2 class="h5 blog-entry-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
 

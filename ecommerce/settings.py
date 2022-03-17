@@ -122,8 +122,6 @@ else:
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         }
     }
-    DATABASES['default'] = dj_database_url.config(conn_max_age=None , ssl_require=True)
-
 
 #pip install psycopg2
 

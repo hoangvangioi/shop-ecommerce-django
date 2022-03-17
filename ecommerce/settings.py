@@ -14,7 +14,7 @@ import os
 from django.contrib.messages import constants as messages
 import django_heroku
 import dj_database_url
-from decouple import config
+from decouple import config, Csv
 from django.core.management.utils import get_random_secret_key
 
 
@@ -30,8 +30,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-
-ALLOWED_HOSTS = ['127.0.0.1', 'www.hoangvangioi.xyz', 'hoangvangioi.xyz']
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 # Application definition
@@ -109,7 +108,7 @@ AUTH_USER_MODEL = 'accounts.Account'
 
 
 
-if DEBUG == True:
+if DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -117,11 +116,8 @@ if DEBUG == True:
         }
     }
 else:
-    DATABASES = {
-        'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        }
-    }
+    DATABASES = {}
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 #pip install psycopg2
 
@@ -204,6 +200,20 @@ TAGGIT_CASE_INSENSITIVE = True
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
+options = DATABASES['default'].get('OPTIONS', {})
+options.pop('sslmode', None)
+
+
+CORS_REPLACE_HTTPS_REFERER      = True
+HOST_SCHEME                     = "https://"
+SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT             = True
+SESSION_COOKIE_SECURE           = True
+CSRF_COOKIE_SECURE              = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
+SECURE_HSTS_SECONDS             = 1000000
+SECURE_FRAME_DENY               = True
 
 
 CLOUDINARY_STORAGE = {

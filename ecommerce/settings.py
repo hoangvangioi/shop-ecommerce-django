@@ -31,7 +31,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", get_random_secret_key())
 DEBUG = config('DEBUG', default=True, cast=bool)
 
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
+ALLOWED_HOSTS = ['127.0.0.1', 'www.hoangvangioi.xyz', 'hoangvangioi.xyz']
 
 
 # Application definition

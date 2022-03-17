@@ -22,7 +22,7 @@ from django.conf.urls import handler403, handler404, handler500
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('gioihv/', admin.site.urls),
 
     path('', views.home, name='home'),
     path('store/', include('store.urls')),

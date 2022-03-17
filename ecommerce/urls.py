@@ -30,6 +30,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('', include('blog.urls')),
     path('orders/', include('orders.urls')),
+    path('donate/', include('donate.urls')),
     re_path(r'^ckeditor/',include('ckeditor_uploader.urls')),
 ]
 

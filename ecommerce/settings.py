@@ -43,16 +43,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # App
     'category',
     'accounts',
     'store',
     'carts',
     'orders',
     'blog',
+    'donate',
+    # CKeditor
     'ckeditor_uploader',
     'ckeditor',
+    # Tag
     'taggit',
-    
+    # Cloud
     'cloudinary_storage',
     'cloudinary',
     ]

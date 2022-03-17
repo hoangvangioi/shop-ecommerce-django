@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %} Donate {% endblock title %}
+{% block content %}
+
+<main class="page-wrapper">
+    <div class="container mb-5 pb-3">
+        <div class="row">
+            <!-- Content-->
+            <section class="pt-2 px-4 ps-lg-0 pe-xl-5">
+                <h1 class="h3 mb-4 pb-2 text-sm-start text-center">Donates</h1>
+                <!-- Donates grid-->
+                    <div class="row row-cols-md-2 row-cols-1 g-4 mb-4 pb-3">
+                        {% for donate in donates %}
+                        <!-- Donate item-->
+                        <div class="col">
+                            <article>
+                                <div class="card mb-3">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex justify-content-between mb-3">
+                                            {% if donate.link %}
+                                            <a class="btn btn-info float-end" href="{{ donate.link }}" target="_blank" rel="noopener noreferrer">Link Donate</a>
+                                            {% endif %}
+                                            <div class="d-flex align-items-center position-relative">
+                                                <div class="h6 text-info">Ngân hàng: {{ donate.bank }}</div>
+                                            </div>
+                                        </div>
+                                        <!-- Collage-->
+                                        {% if donate.qr_code %}
+                                            <img class="rounded-1 mx-auto d-block float-none" src="{{ donate.qr_code.url }}" alt="{{ donate.bank }}">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <!-- Donate title-->
+                                <h3 class="h5 mb-1 text-center"><small>Số tài khoản: </small>{{ donate.stk }}</h3>
+                                <h5 class="text-accent text-center">Chủ tài khoản: {{ donate.name }}</h5>
+                            </article>
+                        <hr>
+                        </div>
+                        {% endfor %}
+                    </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+{% endblock content %}

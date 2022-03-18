@@ -230,7 +230,10 @@ CORS_ORIGIN_WHITELIST = (
     'https://www.hoangvangioi.xyz',
     'https://hoangvangioi.xyz',
 )
-
+CORS_ALLOWED_ORIGINS = [
+    'https://www.hoangvangioi.xyz',
+    'https://hoangvangioi.xyz',
+]
 
 CORS_ORIGIN_ALLOW_ALL = True
 CSRF_COOKIE_AGE = 31449600
@@ -248,10 +251,7 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 CSRF_USE_SESSIONS = False
 
-CORS_ALLOWED_ORIGINS = [
-    'https://www.hoangvangioi.xyz',
-    'https://hoangvangioi.xyz',
-]
+
 
 ADMINS = [('Gioi', 'gioitube2k2@gmail.com.com'),]
 

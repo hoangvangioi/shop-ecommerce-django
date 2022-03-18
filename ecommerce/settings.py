@@ -221,10 +221,10 @@ options.pop('sslmode', None)
 
 # CACHE_MIDDLEWARE_SECONDS = 0
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-CORS_ALLOW_CREDENTIALS = True
-CORS_REPLACE_HTTPS_REFERER = True
+# CORS_ALLOW_CREDENTIALS = True
+# CORS_REPLACE_HTTPS_REFERER = True
 
 # CORS_ORIGIN_WHITELIST = (
 #     'https://www.hoangvangioi.xyz',
@@ -234,21 +234,21 @@ CORS_REPLACE_HTTPS_REFERER = True
 #     'https://shop-gioihv.herokuapp.com',
 # ]
 
-CORS_ORIGIN_ALLOW_ALL = True
-CSRF_COOKIE_AGE = 31449600
-CSRF_COOKIE_DOMAIN = config('CSRF_COOKIE_DOMAIN', cast=Csv())
-CSRF_COOKIE_HTTPONLY = False
-CSRF_COOKIE_NAME = 'csrftoken'
-CSRF_COOKIE_PATH = '/'
-CSRF_COOKIE_SAMESITE = 'Lax'
-CSRF_COOKIE_SECURE = False
-CSRF_FAILURE_VIEW = 'django.views.csrf.csrf_failure'
-CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
+# CORS_ORIGIN_ALLOW_ALL = True
+# CSRF_COOKIE_AGE = 31449600
+# CSRF_COOKIE_DOMAIN = config('CSRF_COOKIE_DOMAIN', cast=Csv())
+# CSRF_COOKIE_HTTPONLY = False
+# CSRF_COOKIE_NAME = 'csrftoken'
+# CSRF_COOKIE_PATH = '/'
+# CSRF_COOKIE_SAMESITE = 'Lax'
+# CSRF_COOKIE_SECURE = False
+# CSRF_FAILURE_VIEW = 'django.views.csrf.csrf_failure'
+# CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
 CSRF_TRUSTED_ORIGINS = [
     'https://www.hoangvangioi.xyz',
     'https://hoangvangioi.xyz',
 ]
-CSRF_USE_SESSIONS = False
+# CSRF_USE_SESSIONS = False
 
 
 

@@ -15,6 +15,7 @@ from django.contrib.messages import constants as messages
 import django_heroku
 import dj_database_url
 from decouple import config, Csv
+from corsheaders.defaults import default_headers
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -57,6 +58,8 @@ INSTALLED_APPS = [
     # Cloud
     'cloudinary_storage',
     'cloudinary',
+
+    'corsheaders',
     ]
 
 
@@ -66,9 +69,10 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -217,6 +221,16 @@ options.pop('sslmode', None)
 
 # CACHE_MIDDLEWARE_SECONDS = 0
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_REPLACE_HTTPS_REFERER = True
+
+CORS_ORIGIN_WHITELIST = (
+    'https://www.hoangvangioi.xyz',
+    'https://hoangvangioi.xyz',
+)
+
 
 CORS_ORIGIN_ALLOW_ALL = True
 CSRF_COOKIE_AGE = 31449600
@@ -228,19 +242,19 @@ CSRF_COOKIE_SAMESITE = 'Lax'
 CSRF_COOKIE_SECURE = False
 CSRF_FAILURE_VIEW = 'django.views.csrf.csrf_failure'
 CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
-CSRF_TRUSTED_ORIGINS = []
+CSRF_TRUSTED_ORIGINS = [
+    'https://www.hoangvangioi.xyz',
+    'https://hoangvangioi.xyz',
+]
 CSRF_USE_SESSIONS = False
 
+CORS_ALLOWED_ORIGINS = [
+    'https://www.hoangvangioi.xyz',
+    'https://hoangvangioi.xyz',
+]
 
 ADMINS = [('Gioi', 'gioitube2k2@gmail.com.com'),]
 
-# CSRF_COOKIE_NAME = 'csrfmiddlewaretoken' 
-# CSRF_COOKIE_DOMAIN = 'localhost:8000' # your domain name 
-# CSRF_COOKIE_SECURE = False 
-# CSRF_COOKIE_HTTPONLY = False 
-# CSRF_COOKIE_AGE = None 
-# CSRF_COOKIE_USED = True 
-# CSRF_COOKIE_PATH = 'C:\\Users\\me\\Desktop\\cookFol' 
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': config('CLOUD_NAME'),

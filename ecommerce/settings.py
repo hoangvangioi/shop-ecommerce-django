@@ -209,8 +209,8 @@ options.pop('sslmode', None)
 # HOST_SCHEME                     = "https://"
 # SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https')
 # SECURE_SSL_REDIRECT             = True
-SESSION_COOKIE_SECURE           = True
-CSRF_COOKIE_SECURE              = True
+SESSION_COOKIE_SECURE           = False
+CSRF_COOKIE_SECURE              = False
 # SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
 # SECURE_HSTS_SECONDS             = 1000000
 # SECURE_FRAME_DENY               = True

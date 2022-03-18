@@ -208,53 +208,6 @@ options = DATABASES['default'].get('OPTIONS', {})
 options.pop('sslmode', None)
 
 
-# CORS_REPLACE_HTTPS_REFERER      = True
-# HOST_SCHEME                     = "https://"
-# SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https')
-# SECURE_SSL_REDIRECT             = True
-# SESSION_COOKIE_SECURE           = False
-# CSRF_COOKIE_SECURE              = False
-# SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
-# SECURE_HSTS_SECONDS             = 1000000
-# SECURE_FRAME_DENY               = True
-
-
-# CACHE_MIDDLEWARE_SECONDS = 0
-
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-# CORS_ALLOW_CREDENTIALS = True
-# CORS_REPLACE_HTTPS_REFERER = True
-
-# CORS_ORIGIN_WHITELIST = (
-#     'https://www.hoangvangioi.xyz',
-#     'https://hoangvangioi.xyz',
-# )
-# CORS_ALLOWED_ORIGINS = [
-#     'https://shop-gioihv.herokuapp.com',
-# ]
-
-# CORS_ORIGIN_ALLOW_ALL = True
-# CSRF_COOKIE_AGE = 31449600
-# CSRF_COOKIE_DOMAIN = config('CSRF_COOKIE_DOMAIN', cast=Csv())
-# CSRF_COOKIE_HTTPONLY = False
-# CSRF_COOKIE_NAME = 'csrftoken'
-# CSRF_COOKIE_PATH = '/'
-# CSRF_COOKIE_SAMESITE = 'Lax'
-# CSRF_COOKIE_SECURE = False
-# CSRF_FAILURE_VIEW = 'django.views.csrf.csrf_failure'
-# CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
-# CSRF_TRUSTED_ORIGINS = [
-#     'https://www.hoangvangioi.xyz',
-#     'https://hoangvangioi.xyz',
-# ]
-# CSRF_USE_SESSIONS = False
-
-
-
-
-CORS_ALLOW_CREDENTIALS = True
-
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_CREDENTIALS = True
@@ -271,9 +224,6 @@ CORS_ORIGIN_WHITELIST = (
     '*.hoangvangioi.xyz',
     'hoangvangioi.xyz',
 )
-
-
-
 
 
 ADMINS = [('Gioi', 'gioitube2k2@gmail.com.com'),]

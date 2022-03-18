@@ -215,6 +215,11 @@ options.pop('sslmode', None)
 # SECURE_FRAME_DENY               = True
 
 
+CACHE_MIDDLEWARE_SECONDS = 600
+CSRF_COOKIE_AGE = None
+CSRF_COOKIE_DOMAIN = None
+
+
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': config('CLOUD_NAME'),
     'API_KEY': config('API_KEY'),

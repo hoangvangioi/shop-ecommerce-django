@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
 
-    # 'corsheaders',
+    'corsheaders',
     ]
 
 
@@ -71,7 +71,7 @@ MIDDLEWARE = [
     
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    # 'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -250,6 +250,7 @@ options.pop('sslmode', None)
 # ]
 # CSRF_USE_SESSIONS = False
 
+CSRF_TRUSTED_ORIGINS = ['https://*.hoangvangioi.xyz']
 
 
 ADMINS = [('Gioi', 'gioitube2k2@gmail.com.com'),]

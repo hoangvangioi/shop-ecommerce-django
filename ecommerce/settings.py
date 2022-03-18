@@ -15,7 +15,7 @@ from django.contrib.messages import constants as messages
 import django_heroku
 import dj_database_url
 from decouple import config, Csv
-from corsheaders.defaults import default_headers
+# from corsheaders.defaults import default_headers
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
 
-    'corsheaders',
+    # 'corsheaders',
     ]
 
 
@@ -71,7 +71,7 @@ MIDDLEWARE = [
     
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
 
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

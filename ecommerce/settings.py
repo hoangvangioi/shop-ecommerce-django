@@ -116,7 +116,7 @@ if DEBUG:
     }
 else:
     DATABASES = {}
-    # DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 #pip install psycopg2
 
@@ -215,10 +215,32 @@ options.pop('sslmode', None)
 # SECURE_FRAME_DENY               = True
 
 
-CACHE_MIDDLEWARE_SECONDS = 0
-CSRF_COOKIE_AGE = True
-CSRF_COOKIE_DOMAIN = True
-CSRF_COOKIE_SECURE = True
+# CACHE_MIDDLEWARE_SECONDS = 0
+# CSRF_COOKIE_AGE = True
+# CSRF_COOKIE_DOMAIN = True
+# CSRF_COOKIE_SECURE = True
+
+CORS_ORIGIN_ALLOW_ALL = True
+CSRF_COOKIE_AGE = 31449600
+CSRF_COOKIE_DOMAIN = None
+CSRF_COOKIE_HTTPONLY = False
+CSRF_COOKIE_NAME = 'csrftoken'
+CSRF_COOKIE_PATH = '/'
+CSRF_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_SECURE = False
+CSRF_FAILURE_VIEW = 'django.views.csrf.csrf_failure'
+CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
+CSRF_TRUSTED_ORIGINS = []
+CSRF_USE_SESSIONS = False
+
+
+# CSRF_COOKIE_NAME = 'csrfmiddlewaretoken' 
+# CSRF_COOKIE_DOMAIN = 'localhost:8000' # your domain name 
+# CSRF_COOKIE_SECURE = False 
+# CSRF_COOKIE_HTTPONLY = False 
+# CSRF_COOKIE_AGE = None 
+# CSRF_COOKIE_USED = True 
+# CSRF_COOKIE_PATH = 'C:\\Users\\me\\Desktop\\cookFol' 
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': config('CLOUD_NAME'),

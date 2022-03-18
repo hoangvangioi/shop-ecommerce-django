@@ -231,8 +231,7 @@ CORS_ORIGIN_WHITELIST = (
     'https://hoangvangioi.xyz',
 )
 CORS_ALLOWED_ORIGINS = [
-    'https://www.hoangvangioi.xyz',
-    'https://hoangvangioi.xyz',
+    'https://shop-gioihv.herokuapp.com',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True

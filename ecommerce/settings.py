@@ -226,13 +226,13 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 CORS_ALLOW_CREDENTIALS = True
 CORS_REPLACE_HTTPS_REFERER = True
 
-CORS_ORIGIN_WHITELIST = (
-    'https://www.hoangvangioi.xyz',
-    'https://hoangvangioi.xyz',
-)
-CORS_ALLOWED_ORIGINS = [
-    'https://shop-gioihv.herokuapp.com',
-]
+# CORS_ORIGIN_WHITELIST = (
+#     'https://www.hoangvangioi.xyz',
+#     'https://hoangvangioi.xyz',
+# )
+# CORS_ALLOWED_ORIGINS = [
+#     'https://shop-gioihv.herokuapp.com',
+# ]
 
 CORS_ORIGIN_ALLOW_ALL = True
 CSRF_COOKIE_AGE = 31449600

@@ -39,3 +39,7 @@ def handler500(request, *args, **argv):
 
 def handler403(request, *args, **argv):
     return render(request, '404.html', status=403)
+
+
+def csrf_failure(request, reason=""):
+    return render(request, '404.html')

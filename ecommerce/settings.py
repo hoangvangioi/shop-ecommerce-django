@@ -250,7 +250,30 @@ options.pop('sslmode', None)
 # ]
 # CSRF_USE_SESSIONS = False
 
+
+
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_CREDENTIALS = True
+
+
 CSRF_TRUSTED_ORIGINS = ['https://*.hoangvangioi.xyz']
+
+CORS_REPLACE_HTTPS_REFERER = True
+
+CSRF_COOKIE_DOMAIN = 'hoangvangioi.xyz'
+
+CORS_ORIGIN_WHITELIST = (
+    'https://*.hoangvangioi.xyz/',
+    '*.hoangvangioi.xyz',
+    'hoangvangioi.xyz',
+)
+
+
+
 
 
 ADMINS = [('Gioi', 'gioitube2k2@gmail.com.com'),]

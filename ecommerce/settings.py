@@ -244,10 +244,10 @@ options.pop('sslmode', None)
 # CSRF_COOKIE_SECURE = False
 # CSRF_FAILURE_VIEW = 'django.views.csrf.csrf_failure'
 # CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
-CSRF_TRUSTED_ORIGINS = [
-    'https://www.hoangvangioi.xyz',
-    'https://hoangvangioi.xyz',
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     'https://www.hoangvangioi.xyz',
+#     'https://hoangvangioi.xyz',
+# ]
 # CSRF_USE_SESSIONS = False
 
 

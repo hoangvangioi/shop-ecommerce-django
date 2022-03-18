@@ -150,7 +150,7 @@
                                     <a class="d-block flex-shrink-0" href="{{ cart_item.product.get_url }}"><img src="{{ cart_item.product.product_images.url }}" width="64" alt="Product"></a>
                                     <div class="ps-2">
                                         <h6 class="widget-product-title"><a href="{{ cart_item.product.get_url }}">{{ cart_item.product.product_name }}</a></h6>
-                                        <div class="widget-product-meta"><span class="text-accent me-2">{{ cart_item.product.price }}<small> VND  each</small></span><span class="text-muted">x {{cart_item.quantity}}</span></div>
+                                        <div class="widget-product-meta"><span class="text-accent me-2">$ {{ cart_item.product.price }}<small>  each</small></span><span class="text-muted">x {{cart_item.quantity}}</span></div>
                                         <p class="text-muted small">
                                         {% if cart_item.variations.all %}
                                             {% for item in cart_item.variations.all %}
@@ -163,13 +163,13 @@
                                 {% endfor %}
                             </div>
                             <ul class="list-unstyled fs-sm pb-2 border-bottom">
-                                <li class="d-flex justify-content-between align-items-center"><span class="me-2">Subtotal:</span><span class="text-end">{{total}}<small> VND</small></span></li>
+                                <li class="d-flex justify-content-between align-items-center"><span class="me-2">Subtotal:</span><span class="text-end">$ {{total}}</span></li>
                                 <li class="d-flex justify-content-between align-items-center"><span class="me-2">Shipping:</span><span class="text-end">—</span></li>
-                                <li class="d-flex justify-content-between align-items-center"><span class="me-2">Taxes:</span><span class="text-end">{{tax}}<small> VND</small></span></li>
+                                <li class="d-flex justify-content-between align-items-center"><span class="me-2">Taxes:</span><span class="text-end">$ {{tax}}</span></li>
                                 <li class="d-flex justify-content-between align-items-center"><span class="me-2">Discount:</span><span class="text-end">—</span></li>
                             </ul>
                             <h2 class="h6 text-center mb-3 pb-1">Grand Total:</h2>
-                            <h3 class="fw-normal text-center my-3">{{grand_total}}<small> VND</small></h3>
+                            <h3 class="fw-normal text-center my-3">$ {{grand_total}}</h3>
                         </div>
                     </div>
                 </aside>

@@ -216,9 +216,7 @@ options.pop('sslmode', None)
 
 
 # CACHE_MIDDLEWARE_SECONDS = 0
-# CSRF_COOKIE_AGE = True
-# CSRF_COOKIE_DOMAIN = True
-# CSRF_COOKIE_SECURE = True
+
 
 CORS_ORIGIN_ALLOW_ALL = True
 CSRF_COOKIE_AGE = 31449600
@@ -233,6 +231,8 @@ CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
 CSRF_TRUSTED_ORIGINS = []
 CSRF_USE_SESSIONS = False
 
+
+ADMINS = [('Gioi', 'gioitube2k2@gmail.com.com'),]
 
 # CSRF_COOKIE_NAME = 'csrfmiddlewaretoken' 
 # CSRF_COOKIE_DOMAIN = 'localhost:8000' # your domain name 

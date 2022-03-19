@@ -209,24 +209,14 @@ options.pop('sslmode', None)
 
 
 CORS_ORIGIN_ALLOW_ALL = True
-
 CORS_ALLOW_CREDENTIALS = True
-
-
-CSRF_TRUSTED_ORIGINS = ['https://*.hoangvangioi.xyz']
-
 CORS_REPLACE_HTTPS_REFERER = True
 
-CSRF_COOKIE_DOMAIN = 'hoangvangioi.xyz'
+CSRF_TRUSTED_ORIGINS = [config('CSRF_TRUSTED_ORIGINS')]
 
-CORS_ORIGIN_WHITELIST = (
-    'https://*.hoangvangioi.xyz/',
-    '*.hoangvangioi.xyz',
-    'hoangvangioi.xyz',
-)
+CSRF_COOKIE_DOMAIN = config('CSRF_COOKIE_DOMAIN')
 
-
-ADMINS = [('Gioi', 'gioitube2k2@gmail.com.com'),]
+CORS_ORIGIN_WHITELIST = config('CORS_ORIGIN_WHITELIST', cast=Csv())
 
 
 CLOUDINARY_STORAGE = {

@@ -10,7 +10,7 @@
 
 1. Sao chép dự án về máy tính
 
-Mở cửa sổ dòng lệnh, đi tới thư mục lưu dự án và nhập lệnh sau: 
+    Mở cửa sổ dòng lệnh, đi tới thư mục lưu dự án và nhập lệnh sau: 
 
    ```
    git clone https://github.com/gioitube/shop-ecommerce-django.git
@@ -18,25 +18,25 @@ Mở cửa sổ dòng lệnh, đi tới thư mục lưu dự án và nhập lệ
 
 2. Tạo và kích hoạt môi trường ảo
 
-Di chuyển đến thư mục dự án
-    
+    Di chuyển đến thư mục dự án
+
     ```
     cd shop-ecommerce-django
     ```
-Tạo môi trường ảo
+    Tạo môi trường ảo
 
     ```
     virtualenv env
     ```
-Kích hoạt môi trường ảo
+    Kích hoạt môi trường ảo
 
     ```
-   # windows
+    # windows
     env\Scripts\activate
 
-   # linux and macOS
+    # linux and macOS
    source env/bin/activate
-   ```
+    ```
     Để biết cách sử dụng môi trường ảo, hãy xem: [Xây dựng môi trường phát triển] (https://virtualenv.pypa.io/en/latest/index.html). 
     Nếu không muốn sử dụng môi trường ảo, bạn có thể bỏ qua bước này.
 
@@ -49,21 +49,22 @@ Kích hoạt môi trường ảo
 
 4. Tạo file .env và cập nhật
 
-DEBUG = True
-ALLOWED_HOSTS = 127.0.0.1
+    ```
+    DEBUG = True
+    ALLOWED_HOSTS = 127.0.0.1
 
-SECRET_KEY = qf&^m(ttxc+updmfl&p49@l+u-b^jx96f57zvi3xf#c*mftuwm
+    SECRET_KEY = qf&^m(ttxc+updmfl&p49@l+u-b^jx96f57zvi3xf#c*mftuwm
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "email"
-EMAIL_HOST_PASSWORD = "password"
-EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    EMAIL_HOST = "smtp.gmail.com"
+    EMAIL_HOST_USER = "email"
+    EMAIL_HOST_PASSWORD = "password"
+    EMAIL_PORT = 587
 
-CSRF_TRUSTED_ORIGINS = 'http://127.0.0.1'
-CSRF_COOKIE_DOMAIN = '127.0.0.1'
-CORS_ORIGIN_WHITELIST = 'http://127.0.0.1'
-
+    CSRF_TRUSTED_ORIGINS = 'http://127.0.0.1'
+    CSRF_COOKIE_DOMAIN = '127.0.0.1'
+    CORS_ORIGIN_WHITELIST = 'http://127.0.0.1'
+    ```
 
 5. Di chuyển cơ sở dữ liệu
 

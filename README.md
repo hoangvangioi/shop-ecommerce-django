@@ -23,11 +23,13 @@
     ```
     cd shop-ecommerce-django
     ```
+
 -    Tạo môi trường ảo
 
     ```
     virtualenv env
     ```
+
 -    Kích hoạt môi trường ảo
 
     ```
@@ -37,6 +39,7 @@
     # linux and macOS
    source env/bin/activate
     ```
+
 -    Để biết cách sử dụng môi trường ảo, hãy xem: [Xây dựng môi trường phát triển] (https://virtualenv.pypa.io/en/latest/index.html). 
     Nếu không muốn sử dụng môi trường ảo, bạn có thể bỏ qua bước này.
 

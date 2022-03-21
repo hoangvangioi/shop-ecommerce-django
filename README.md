@@ -1,8 +1,8 @@
-[![](https://img.shields.io/badge/python-3.10.3-orange.svg)](https://www.python.org/downloads/release/python-370/)
-[![](https://img.shields.io/badge/django-4.0.3-green.svg)](https://docs.djangoproject.com/en/2.1/releases/2.1/)
-[![](https://img.shields.io/badge/bootstrap-5.1.3-blue.svg)](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
+[![](https://img.shields.io/badge/python-3.10.3-orange.svg)](https://www.python.org/downloads/release/python-3103/)
+[![](https://img.shields.io/badge/django-4.0.3-green.svg)](https://docs.djangoproject.com/en/4.0/)
+[![](https://img.shields.io/badge/bootstrap-5.1.3-blue.svg)](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 
-## Bản demo dự án: [Demo] (https://www.hoangvangioi.xyz/)
+## Bản demo dự án: [Demo] (https://www.hoangvangioi.xyz)
 
 
 ## Chạy dự án tại máy chủ cục bộ
@@ -99,6 +99,6 @@
 
 1. [Paypal] (https://www.paypal.com/paypalme/gioihoang)
 
-2 [Momo] (https://me.momo.vn/pwI4TzsliRfeIqCdini5Ia)
+2. [Momo] (https://me.momo.vn/pwI4TzsliRfeIqCdini5Ia)
 
 ![](/static/img/momo.jpg)
